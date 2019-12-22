@@ -1,9 +1,22 @@
 {
+  "env": {
+    "production": {
+      "plugins": [
+        "babel-plugin-jsx-remove-data-test-id"
+      ]
+    }
+  },
   "presets": [
     "@babel/preset-env",
     "@babel/preset-react"
   ],
   "plugins": [
-    "babel-plugin-styled-components"
+    "babel-plugin-styled-components",
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
   ]
 }

@@ -20,9 +20,19 @@ const Counter = () => {
 
   return (
     <CounterContainer>
-      <Button onClick={() => setCounterValue(counterValue - 1)}>-</Button>
-      <CounterValue>{counterValue}</CounterValue>
-      <Button onClick={() => setCounterValue(counterValue + 1)}>+</Button>
+      <Button
+        onClick={() => setCounterValue(counterValue - 1)}
+        data-testid="decrement-button"
+      >
+        -
+      </Button>
+      <CounterValue data-testid="counter-value">{counterValue}</CounterValue>
+      <Button
+        onClick={() => setCounterValue(counterValue + 1)}
+        data-testid="increment-button"
+      >
+        +
+      </Button>
     </CounterContainer>
   );
 };

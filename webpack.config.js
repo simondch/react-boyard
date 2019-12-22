@@ -1,5 +1,7 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const path = require('path');
 module.exports = {
+  entry: './src/index.js',
   module: {
     rules: [
       {
@@ -18,6 +20,11 @@ module.exports = {
         ],
       },
     ],
+  },
+  devtool: 'cheap-module-eval-source-map',
+  devServer: {
+    // Define static folder for devserver
+    contentBase: path.join(__dirname, 'src/static'),
   },
   plugins: [
     new HtmlWebPackPlugin({

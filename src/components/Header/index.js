@@ -8,7 +8,7 @@ const H1 = styled.h1`
 `;
 
 const Header = props => {
-  return <H1>{props.text}</H1>;
+  return <H1 data-testid="header-h1">{props.text}</H1>;
 };
 
 Header.propTypes = {

@@ -1,7 +1,8 @@
 {
   "parser": "babel-eslint",
   "env": {
-    "browser": true
+    "browser": true,
+    "jest/globals": true
   },
   "extends": [
     "eslint:recommended",
@@ -11,5 +12,8 @@
     "react": {
       "version": "16.12.0"
     }
-  }
+  },
+  "plugins": [
+    "jest"
+  ]
 }
