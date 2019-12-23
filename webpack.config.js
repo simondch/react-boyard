@@ -24,7 +24,9 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     // Define static folder for devserver
-    contentBase: path.join(__dirname, 'src/static')
+    contentBase: path.join(__dirname, 'src/static'),
+    // help for hot reload router
+    historyApiFallback: true
   },
   plugins: [
     new HtmlWebPackPlugin({
