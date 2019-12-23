@@ -8,28 +8,34 @@ module.exports = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-        },
+          loader: 'babel-loader'
+        }
       },
       {
         test: /\.html$/,
         use: [
           {
-            loader: 'html-loader',
-          },
-        ],
-      },
-    ],
+            loader: 'html-loader'
+          }
+        ]
+      }
+    ]
   },
   devtool: 'cheap-module-eval-source-map',
   devServer: {
     // Define static folder for devserver
-    contentBase: path.join(__dirname, 'src/static'),
+    contentBase: path.join(__dirname, 'src/static')
   },
   plugins: [
     new HtmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html',
-    }),
+      filename: './index.html'
+    })
   ],
+  resolve: {
+    alias: {
+      store: path.resolve(__dirname, 'src/store'),
+      components: path.resolve(__dirname, 'src/components')
+    }
+  }
 };

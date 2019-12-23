@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Button = styled.button`
-  width: 48px;
-  height: 32px;
-`;
+import Button from 'components/Button';
 
 const CounterContainer = styled.div`
   display: flex;
@@ -15,21 +12,23 @@ const CounterValue = styled.span`
   margin: 8px;
 `;
 
-const Counter = () => {
+const CounterHooks = () => {
   const [counterValue, setCounterValue] = useState(1);
 
   return (
     <CounterContainer>
       <Button
         onClick={() => setCounterValue(counterValue - 1)}
-        data-testid="decrement-button"
+        data-testid="decrement-button-counter-hooks"
       >
         -
       </Button>
-      <CounterValue data-testid="counter-value">{counterValue}</CounterValue>
+      <CounterValue data-testid="counter-value-counter-hooks">
+        {counterValue}
+      </CounterValue>
       <Button
         onClick={() => setCounterValue(counterValue + 1)}
-        data-testid="increment-button"
+        data-testid="increment-button-counter-hooks"
       >
         +
       </Button>
@@ -37,4 +36,4 @@ const Counter = () => {
   );
 };
 
-export default Counter;
+export default CounterHooks;
