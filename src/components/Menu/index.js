@@ -13,7 +13,14 @@ const MenuItem = styled(NavLink)`
   cursor: pointer;
   text-decoration: none;
   color: ${colors.secondaryLight};
-  :hover {
+
+  &.selected {
+    color: ${colors.secondary};
+    font-weight: 500;
+    border-bottom: 1px solid ${colors.secondary};
+  }
+
+  &:hover {
     font-weight: 700;
     color: ${colors.secondary};
   }
@@ -22,9 +29,15 @@ const MenuItem = styled(NavLink)`
 const Menu = () => {
   return (
     <MenuContainer>
-      <MenuItem to="/hooks">Hooks</MenuItem>
-      <MenuItem to="/redux">Redux</MenuItem>
-      <MenuItem to="/others">Others</MenuItem>
+      <MenuItem to="/hooks" activeClassName="selected">
+        Hooks
+      </MenuItem>
+      <MenuItem to="/redux" activeClassName="selected">
+        Redux
+      </MenuItem>
+      <MenuItem to="/others" activeClassName="selected">
+        Others
+      </MenuItem>
     </MenuContainer>
   );
 };
