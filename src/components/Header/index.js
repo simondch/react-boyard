@@ -12,7 +12,7 @@ const Header = props => {
 };
 
 Header.propTypes = {
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 export default Header;

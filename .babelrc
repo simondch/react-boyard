@@ -1,13 +1,17 @@
 {
   "env": {
     "production": {
-      "plugins": [
-        "babel-plugin-jsx-remove-data-test-id"
-      ]
+      "plugins": ["babel-plugin-jsx-remove-data-test-id"]
     }
   },
   "presets": [
-    "@babel/preset-env",
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": 3
+      }
+    ],
     "@babel/preset-react"
   ],
   "plugins": [
