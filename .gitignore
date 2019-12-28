@@ -3,3 +3,4 @@ dist
 coverage
 stats.json
 .cache/
+bundle-analyze/

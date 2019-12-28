@@ -1,6 +1,7 @@
+const path = require('path');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 
-const path = require('path');
 module.exports = {
   entry: './src/index.js',
   module: {
@@ -22,22 +23,8 @@ module.exports = {
       }
     ]
   },
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      chunks: 'all',
-      maxInitialRequests: Infinity,
-      minSize: 0
-    }
-  },
-  devtool: 'cheap-module-eval-source-map',
-  devServer: {
-    // Define static folder for devserver
-    contentBase: path.join(__dirname, 'src/static'),
-    // help for hot reload router
-    historyApiFallback: true
-  },
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
       template: './src/index.html',
       filename: './index.html'
