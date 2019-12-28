@@ -6,14 +6,13 @@
   },
   "extends": [
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended"
   ],
   "settings": {
     "react": {
       "version": "16.12.0"
     }
   },
-  "plugins": [
-    "jest"
-  ]
+  "plugins": ["jest", "jsx-a11y"]
 }
