@@ -10,6 +10,8 @@ import rootReducer from 'store/rootReducer';
 
 import axios from 'axios';
 
+import './languages/i18n';
+
 import ExamplePage from 'components/ExamplePage';
 
 const api = axios.create({
