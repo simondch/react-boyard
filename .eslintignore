@@ -1,5 +1,6 @@
 **/node_modules/**
 dist/**
-webpack.config.js
+webpack.*.js
 jest.config.js
+bundle-analyze/**
 

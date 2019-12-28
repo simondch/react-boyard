@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import colors from 'styles/colors';
 
 import Menu from 'components/Menu';
+import LanguageSelector from 'components/LanguageSelector';
+
+import { useTranslation } from 'react-i18next';
 
 const HeaderBarContainer = styled.div`
   width: calc(100% - 32px);
@@ -16,17 +19,26 @@ const HeaderBarContainer = styled.div`
   padding: 16px;
 `;
 
-const SiteName = styled.div`
+const PageName = styled.div`
   font-size: 32px;
   font-weight: 700;
   color: ${colors.secondary};
 `;
 
+const MenusContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`
+
 const HeaderBar = () => {
+  const { t } = useTranslation('example');
   return (
     <HeaderBarContainer>
-      <SiteName>Example Page</SiteName>
-      <Menu />
+      <PageName>{t('example')}</PageName>
+      <MenusContainer>
+        <Menu />
+        <LanguageSelector/>
+      </MenusContainer>
     </HeaderBarContainer>
   );
 };
