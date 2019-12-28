@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[0],{92:function(n,o,p){"use strict";var t=p(2).c.button.withConfig({displayName:"Button",componentId:"g4pyz8-0"})(["width:48px;height:32px;border-radius:4px;"]);o.a=t}}]);
+//# sourceMappingURL=0.js.map
