@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
@@ -16,6 +17,13 @@ module.exports = merge(common, {
     }
   },
   plugins: [
+    // we need to define process.env key accessed in react app
+    new webpack.DefinePlugin({
+      // router public url basename with default value set to root
+      'process.env.PUBLIC_URL': process.env.PUBLIC_URL
+        ? JSON.stringify(process.env.PUBLIC_URL)
+        : JSON.stringify('/')
+    }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
       reportFilename: path.resolve(__dirname, 'bundle-analyze/report.html'),
