@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
 const App = () => {
   return (
     <Provider store={store}>
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <ThemeProvider theme={{ fontFamily: 'Lato' }}>
           <ExamplePage />
           <GlobalStyle />

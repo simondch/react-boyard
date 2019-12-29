@@ -20,7 +20,7 @@ jobs:
         run: npm test
 
       - name: Build
-        run: npm run build
+        run: PUBLIC_URL=/${{ github.event.repository.name }} npm run build
 
       - name: Deploy to gh-pages branch
         uses: JamesIves/github-pages-deploy-action@releases/v3
