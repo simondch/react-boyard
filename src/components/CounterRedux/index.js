@@ -15,11 +15,11 @@ const CounterValue = styled.span`
   margin: 8px;
 `;
 
-const CounterRedux = ({ incrementCounter, decrementCounter, counterValue }) => {
+const CounterRedux = ({ increment, decrement, counterValue }) => {
   return (
     <CounterContainer>
       <Button
-        onClick={decrementCounter}
+        onClick={decrement}
         data-testid="decrement-button-counter-hooks"
       >
         -
@@ -28,7 +28,7 @@ const CounterRedux = ({ incrementCounter, decrementCounter, counterValue }) => {
         {counterValue}
       </CounterValue>
       <Button
-        onClick={incrementCounter}
+        onClick={increment}
         data-testid="increment-button-counter-hooks"
       >
         +
@@ -39,15 +39,15 @@ const CounterRedux = ({ incrementCounter, decrementCounter, counterValue }) => {
 
 CounterRedux.propTypes = {
   counterValue: PropTypes.number.isRequired,
-  decrementCounter: PropTypes.func.isRequired,
-  incrementCounter: PropTypes.func.isRequired
+  decrement: PropTypes.func.isRequired,
+  increment: PropTypes.func.isRequired
 };
 
 const mapStateToProps = ({ counter: { counterValue } }) => ({ counterValue });
 
 const mapDispatchToProps = dispatch => ({
-  decrementCounter: () => dispatch(decrementCounter()),
-  incrementCounter: () => dispatch(incrementCounter())
+  decrement: () => dispatch(decrementCounter()),
+  increment: () => dispatch(incrementCounter())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CounterRedux);
