@@ -28,3 +28,4 @@ jobs:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: dist # The folder the action should deploy.
+          CLEAN: true # Cleaning gh-pages branch before updating (hash in filename)
