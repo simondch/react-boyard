@@ -8,6 +8,9 @@ const path = require('path');
 module.exports = merge(common, {
   mode: 'production',
   devtool: 'source-map',
+  output : {
+    filename: "[name].[hash].js"
+  },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
