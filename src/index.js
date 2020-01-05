@@ -12,7 +12,7 @@ import axios from 'axios';
 
 import './languages/i18n';
 
-import ExamplePage from 'components/ExamplePage';
+import HomePage from 'components/HomePage';
 
 const api = axios.create({
   baseURL: 'https://thesimpsonsquoteapi.glitch.me/quotes'
@@ -40,7 +40,7 @@ const App = () => {
     <Provider store={store}>
       <Router basename={process.env.PUBLIC_URL}>
         <ThemeProvider theme={{ fontFamily: 'Lato' }}>
-          <ExamplePage />
+          <HomePage />
           <GlobalStyle />
         </ThemeProvider>
       </Router>
