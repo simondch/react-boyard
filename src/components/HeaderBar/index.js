@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 import colors from 'styles/colors';
@@ -7,6 +8,8 @@ import Menu from 'components/Menu';
 import LanguageSelector from 'components/LanguageSelector';
 
 import { useTranslation } from 'react-i18next';
+
+import getMediaQueries from 'styles/mediaQueries';
 
 const HeaderBarContainer = styled.div`
   width: calc(100% - 32px);
@@ -28,19 +31,26 @@ const PageName = styled.div`
 const MenusContainer = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
 
-const HeaderBar = () => {
-  const { t } = useTranslation('example');
+const HeaderBar = ({ title }) => {
+  const { t } = useTranslation();
+  const { Desktop } = getMediaQueries();
   return (
     <HeaderBarContainer>
-      <PageName>{t('example')}</PageName>
+      <PageName>{t(title)}</PageName>
       <MenusContainer>
         <Menu />
-        <LanguageSelector/>
+        <Desktop>
+          <LanguageSelector />
+        </Desktop>
       </MenusContainer>
     </HeaderBarContainer>
   );
+};
+
+HeaderBar.propTypes = {
+  title: PropTypes.string.isRequired
 };
 
 export default HeaderBar;
