@@ -8,6 +8,9 @@ export default function() {
     isTabletOrMobile: useMediaQuery({
       query: '(max-width: 1224px)'
     }),
+    isMobile: useMediaQuery({
+      query: '(max-width: 767px)'
+    }),
     Desktop: ({ children }) => {
       const isDesktop = useMediaQuery({ minWidth: 1224 });
       return isDesktop ? children : null;
