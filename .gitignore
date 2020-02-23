@@ -4,3 +4,4 @@ coverage
 stats.json
 .cache/
 bundle-analyze/
+.scannerwork
