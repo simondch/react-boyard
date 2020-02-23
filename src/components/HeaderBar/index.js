@@ -16,10 +16,10 @@ const HeaderBarContainer = styled.div`
   height: 64px;
   background-color: ${colors.primary};
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   padding: 16px;
+  flex-direction: ${({ isMobile }) => (isMobile ? 'row-reverse' : 'row')};
 `;
 
 const PageName = styled.div`
@@ -35,9 +35,9 @@ const MenusContainer = styled.div`
 
 const HeaderBar = ({ title }) => {
   const { t } = useTranslation();
-  const { Desktop } = getMediaQueries();
+  const { Desktop, isMobile } = getMediaQueries();
   return (
-    <HeaderBarContainer>
+    <HeaderBarContainer isMobile={isMobile}>
       <PageName>{t(title)}</PageName>
       <MenusContainer>
         <Menu />
