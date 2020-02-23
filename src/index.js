@@ -39,7 +39,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router basename={process.env.PUBLIC_URL}>
-        <ThemeProvider theme={{ fontFamily: 'Lato' }}>
+        <ThemeProvider theme={{ fontFamily: "'Oxygen', 'Lato', sans-serif" }}>
           <HomePage />
           <GlobalStyle />
         </ThemeProvider>
